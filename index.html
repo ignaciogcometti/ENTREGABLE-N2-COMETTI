@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <SCRipt src="./js/script.js"></SCRipt>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>ENTREGABLE N°2</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./images/logo.jpg" alt="Logo de la Página" style="max-width: 150px; display: block; margin: 0 auto 20px;">
+            <h1>Reserva tu traslado para el recital</h1>
+        </header>
+
+        <form id="reservaForm">
+            <label for="recital">Recital:</label>
+            <select id="recital" name="recital" required>
+                <option value="" disabled selected>Selecciona un recital</option>
+                <option value="Los Fundamentalistas">Los Fundamentalistas</option>
+                <option value="Paul McCartney">Paul McCartney</option>
+                <option value="Slipknot">Slipknot</option>
+                <option value="Lollapalooza">Lollapalooza</option>
+                <option value="Eric Clapton">Eric Clapton</option>
+            </select>
+            
+            <label for="pasajeros">Número de pasajeros:</label>
+            <input type="number" id="pasajeros" name="pasajeros" required>
+            
+            <button type="submit">Reservar</button>
+        </form>
+
+        <h2>Reservas Realizadas</h2>
+        <ul id="listaReservas">
+            <!-- Las reservas se mostrarán aquí -->
+        </ul>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

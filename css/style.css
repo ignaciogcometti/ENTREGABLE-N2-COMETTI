@@ -1,0 +1,130 @@
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    color: #2F2F2F;
+}
+
+/* Branding */
+h1, h2 {
+    text-align: center;
+    color: #B22222;
+    margin-top: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-top: 5px solid #B22222;
+}
+
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-weight: bold;
+    color: #B22222;
+}
+
+select, /* Estilos para el selector de recitales */
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #2F2F2F;
+    background-color: #fff;
+}
+
+select:focus,
+input[type="number"]:focus {
+    border-color: #B22222;
+    outline: none;
+    box-shadow: 0 0 5px rgba(178, 34, 34, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #B22222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #DC143C;
+}
+
+/* Estilos de la lista de reservas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    transition: transform 0.2s, background-color 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.02);
+    background-color: #B22222;
+    color: #fff;
+}
+
+/* Media queries para un diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    select,
+    input[type="number"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    li {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
