@@ -4,10 +4,9 @@
 Este proyecto simula la compra de boletos para distintos recitales. Los usuarios pueden seleccionar el recital, la cantidad de boletos y el sistema calculará el precio total.
 
 ## Instrucciones de Uso
-1. Clonar el repositorio o descargar los archivos.
-2. Abrir `index.html` en el navegador.
-3. Seleccionar un recital y la cantidad de boletos.
-4. El precio total se calculará automáticamente.
+1. Abrir `index.html` en el navegador.
+2. Seleccionar un recital y la cantidad de boletos.
+3. El precio total se calculará automáticamente.
 
 ## Tecnologías Utilizadas
 - HTML5

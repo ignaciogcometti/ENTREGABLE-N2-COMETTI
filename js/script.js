@@ -8,8 +8,8 @@ const recitales = [
     },
     {
         id: 2,
-        nombre: 'Paul McCartney',
-        img: '../images/paul.jpg',
+        nombre: 'Airbag',
+        img: '../images/airbag.jpg',
         precio: 5000
     },
     {
@@ -26,6 +26,24 @@ const recitales = [
     },
     {
         id: 5,
+        nombre: 'Creamfields',
+        img: '../images/creamilfs.jpg',
+        precio: 15000
+    },
+    {
+        id: 6,
+        nombre: 'Iron Maiden',
+        img: '../images/iron.jpg',
+        precio: 7000
+    },
+    {
+        id: 7,
+        nombre: 'Los Piojos',
+        img: '../images/piojos.jpg',
+        precio: 1000
+    },
+    {
+        id: 8,
         nombre: 'Eric Clapton',
         img: '../images/ericcc.jpg',
         precio: 4000
