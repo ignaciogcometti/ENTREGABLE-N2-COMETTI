@@ -1,56 +1,87 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const reservaForm = document.getElementById("reservaForm");
-    const listaReservas = document.getElementById("listaReservas");
-
-    // Cargar reservas desde localStorage al cargar la página
-    cargarReservas();
-
-    // Manejar el evento de enviar el formulario
-    reservaForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // Obtener los datos del formulario
-        const recital = document.getElementById("recital").value;
-        const pasajeros = document.getElementById("pasajeros").value;
-
-        // Validar que ambos campos estén llenos
-        if (recital && pasajeros) {
-            // Crear un objeto de reserva
-            const reserva = {
-                recital,
-                pasajeros
-            };
-
-            // Guardar la reserva en localStorage
-            guardarReserva(reserva);
-
-            // Mostrar la reserva en la lista
-            agregarReservaALista(reserva);
-
-            
-            reservaForm.reset();
-        } else {
-            alert("Reserva confirmada.");
-        }
-    });
-
-    // Función para guardar la reserva en localStorage
-    function guardarReserva(reserva) {
-        let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-        reservas.push(reserva);
-        localStorage.setItem("reservas", JSON.stringify(reservas));
+// Recitales en formato JSON
+const recitales = [
+    {
+        id: 1,
+        nombre: 'Los Fundamentalistas',
+        img: '../images/fundamentalistas.jpg', // Asegúrate que la ruta sea correcta
+        precio: 3000
+    },
+    {
+        id: 2,
+        nombre: 'Paul McCartney',
+        img: '../images/paul.jpg',
+        precio: 5000
+    },
+    {
+        id: 3,
+        nombre: 'Slipknot',
+        img: '../images/slippknot.jpg',
+        precio: 4500
+    },
+    {
+        id: 4,
+        nombre: 'Lollapalooza',
+        img: '../images/lollaa.jpg',
+        precio: 6000
+    },
+    {
+        id: 5,
+        nombre: 'Eric Clapton',
+        img: '../images/ericcc.jpg',
+        precio: 4000
     }
+];
 
-    // Función para cargar reservas desde localStorage
-    function cargarReservas() {
-        let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-        reservas.forEach(reserva => agregarReservaALista(reserva));
-    }
+// Cargar recitales dinámicamente como "cards"
+const recitalesContainer = document.getElementById('recitales');
 
-    // Función para agregar una reserva a la lista en el DOM
-    function agregarReservaALista(reserva) {
-        const li = document.createElement("li");
-        li.textContent = `Recital: ${reserva.recital}, Pasajeros: ${reserva.pasajeros}`;
-        listaReservas.appendChild(li);
-    }
+recitales.forEach(recital => {
+    const recitalCard = document.createElement('div');
+    recitalCard.classList.add('recital-card');
+    
+    recitalCard.innerHTML = `
+        <img src="${recital.img}" alt="${recital.nombre}">
+        <h3>${recital.nombre}</h3>
+        <p>Precio: $${recital.precio}</p>
+        <button onclick="agregarAlCarrito(${recital.id})">Comprar</button>
+    `;
+
+    recitalesContainer.appendChild(recitalCard);
 });
+// Variables para total de entradas y precio
+let totalEntradas = 0;
+let totalPrecio = 0;
+let carritoDetalles = [];
+
+// Función para agregar entradas al carrito
+function agregarAlCarrito(id) {
+    const recital = recitales.find(r => r.id === id);
+    if (recital) {
+        totalEntradas++;
+        totalPrecio += recital.precio; // Sumar el precio del recital
+        carritoDetalles.push({ nombre: recital.nombre, precio: recital.precio }); // Agregar objeto con nombre y precio
+
+        // Actualizar el total de entradas y precio
+        document.getElementById('totalEntradas').textContent = `Total de Entradas: ${totalEntradas}`;
+        document.getElementById('totalPrecio').textContent = `Total a Pagar: $${totalPrecio}`;
+
+        // Actualizar los detalles del carrito
+        actualizarCarrito();
+        
+        // Actualizar el footer
+        document.getElementById('footerTotalEntradas').textContent = `Total de Entradas: ${totalEntradas}`;
+        document.getElementById('footerTotalPrecio').textContent = `Total a Pagar: $${totalPrecio}`;
+    }
+}
+
+// Función para mostrar detalles del carrito
+function actualizarCarrito() {
+    const carritoContainer = document.getElementById('carritoDetalles');
+    carritoContainer.innerHTML = ''; // Limpiar contenido anterior
+
+    carritoDetalles.forEach(({ nombre, precio }) => {
+        const detalle = document.createElement('p');
+        detalle.textContent = `Entrada: ${nombre} - Precio: $${precio}`; // Mostrar nombre y precio
+        carritoContainer.appendChild(detalle);
+    });
+}

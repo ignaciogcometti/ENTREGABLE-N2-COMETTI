@@ -1,15 +1,16 @@
-# Traslados para Recitales
+# Simulador de Compra de Boletos para Recitales
 
-Esta es una aplicación web simple para reservar traslados a recitales.
+## Descripción
+Este proyecto simula la compra de boletos para distintos recitales. Los usuarios pueden seleccionar el recital, la cantidad de boletos y el sistema calculará el precio total.
 
-## Estructura del Proyecto
+## Instrucciones de Uso
+1. Clonar el repositorio o descargar los archivos.
+2. Abrir `index.html` en el navegador.
+3. Seleccionar un recital y la cantidad de boletos.
+4. El precio total se calculará automáticamente.
 
-- `index.html`: Contiene el formulario de reserva y la lista de reservas realizadas.
-- `styles.css`: Estilos para el formulario y la lista de reservas.
-- `app.js`: Lógica para manejar el formulario, interactuar con el DOM y almacenar las reservas en `localStorage`.
-
-## Funcionalidades
-
-- Los usuarios pueden reservar traslados para recitales especificando el nombre del recital, el número de pasajeros y la fecha.
-- Las reservas se almacenan en el navegador usando `localStorage` y se muestran en la página.
-- Las reservas persisten incluso al recargar la página.
+## Tecnologías Utilizadas
+- HTML5
+- CSS3 (Bootstrap para el diseño)
+- JavaScript (DOM, eventos, Fetch API)
+- JSON (simulación de base de datos)

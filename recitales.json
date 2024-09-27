@@ -1,0 +1,9 @@
+{
+    "recitales": [
+        {"nombre": "Los Fundamentalistas", "precio": 5000},
+        {"nombre": "Paul McCartney", "precio": 10000},
+        {"nombre": "Slipknot", "precio": 8000},
+        {"nombre": "Lollapalooza", "precio": 15000},
+        {"nombre": "Eric Clapton", "precio": 9000}
+    ]
+}
