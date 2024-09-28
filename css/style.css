@@ -254,3 +254,46 @@ button[type="submit"]:hover {
         margin: 10px 0; /* Espacio vertical entre los enlaces */
     }
 }
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Para pantallas menores a 600px */
+@media (max-width: 600px) {
+    /* Mostrar el botón de hamburguesa */
+    .hamburger {
+        display: block;
+    }
+
+    /* Ocultar el navbar horizontal */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #222;
+        padding: 20px;
+        position: absolute;
+        top: 50px; /* Debajo del botón de hamburguesa */
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+}

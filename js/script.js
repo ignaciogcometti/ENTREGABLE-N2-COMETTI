@@ -103,3 +103,9 @@ function actualizarCarrito() {
         carritoContainer.appendChild(detalle);
     });
 }
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active'); // Alternar la clase active para mostrar/ocultar el menú
+});
